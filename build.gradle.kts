@@ -1,17 +1,21 @@
 plugins {
-   kotlin("jvm") version "2.4.0"
+   alias(libs.plugins.kotlin)
 }
 
 group = "mszczepk"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
    mavenCentral()
 }
 
 dependencies {
+   implementation(libs.spring.web)
+   implementation(libs.jackson.module.kotlin)
+   implementation(libs.kotlinx.coroutines)
+
    testImplementation(kotlin("test"))
-   testImplementation("io.kotest:kotest-assertions-core-jvm:6.2.2")
+   testImplementation(libs.bundles.tests.unit)
 }
 
 kotlin {

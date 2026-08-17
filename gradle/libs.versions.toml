@@ -1,0 +1,19 @@
+[versions]
+kotlin = "2.4.10"
+spring = "7.0.8"
+jackson = "3.1.4"
+kotest = "6.2.3"
+coroutines = "1.11.0"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+[libraries]
+spring-web = { group = "org.springframework", name = "spring-web", version.ref = "spring" }
+jackson-module-kotlin = { group = "tools.jackson.module", name = "jackson-module-kotlin" , version.ref = "jackson" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+junit-prameterized = { group = "org.junit.jupiter", name = "junit-jupiter-params" }
+kotest-assertions = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
+
+[bundles]
+tests-unit = ["junit-prameterized", "kotest-assertions"]
